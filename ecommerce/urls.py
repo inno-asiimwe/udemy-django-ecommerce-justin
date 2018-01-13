@@ -39,12 +39,12 @@ from .views import (
     )
 
 urlpatterns = [
-    path('', home_page),
-    path('about', about_page),
-    path('contact', contact_page),
-    path('login', login_page),
-    path('register', register_page),
-    path('products', include("products.urls")),
+    path('', home_page, name="home"),
+    path('about', about_page, name="about"),
+    path('contact', contact_page, name="contact"),
+    path('login', login_page, name="login"),
+    path('register', register_page, name="register"),
+    path('products', include("products.urls", namespace="products")),
     # path('products', ProductListView.as_view()),
     # path('products-fbv', product_list_view),
     # path('products/<int:pk>', ProductDetailView.as_view()),
