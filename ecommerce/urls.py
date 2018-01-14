@@ -45,6 +45,7 @@ urlpatterns = [
     path('login', login_page, name="login"),
     path('register', register_page, name="register"),
     path('products', include("products.urls", namespace="products")),
+    path('search', include("search.urls", namespace="search")),
     # path('products', ProductListView.as_view()),
     # path('products-fbv', product_list_view),
     # path('products/<int:pk>', ProductDetailView.as_view()),
