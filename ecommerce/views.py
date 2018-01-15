@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .forms import ContactForm, LoginForm, RegisterForm
 
 def home_page(request):
+    print(request.session.get('first_name', 'unkwnown'))
     context = {
         'title': 'Home page',
         'content': 'Welcome to the home page.'

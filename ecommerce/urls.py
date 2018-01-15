@@ -19,16 +19,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-# from products.views import (
-#     ProductListView,
-#     product_list_view,
-#     ProductDetailView,
-#     product_detail_view,
-#     ProductFeaturedDetailView,
-#     ProductFeaturedListView,
-#     ProductDetailSlugView,
-#     )
-
 
 from .views import (
     home_page,
@@ -43,16 +33,11 @@ urlpatterns = [
     path('about', about_page, name="about"),
     path('contact', contact_page, name="contact"),
     path('login', login_page, name="login"),
+    path('cart', include("carts.urls", namespace="cart")),
     path('register', register_page, name="register"),
     path('products', include("products.urls", namespace="products")),
     path('search', include("search.urls", namespace="search")),
-    # path('products', ProductListView.as_view()),
-    # path('products-fbv', product_list_view),
-    # path('products/<int:pk>', ProductDetailView.as_view()),
-    # path('products/<str:slug>', ProductDetailSlugView.as_view()),
-    # path('products-fbv/<int:pk>', product_detail_view),
-    # path('featured', ProductFeaturedListView.as_view()),
-    # path('featured/<int:pk>', ProductFeaturedDetailView.as_view()),
+
     path('admin/', admin.site.urls),
 ]
 
